@@ -15,6 +15,11 @@ export default function PhraseChallengePage() {
   const form = useForm({ defaultValues: { answer: "" } });
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+  const [currentAnswer, setCurrentAnswer] = useState({
+    isCorrect: false,
+    answer: "",
+    currentAnswer: "",
+  });
 
   const validateQuestion = ({ answer }: PhraseFormData) => {
     form.reset();
@@ -25,17 +30,26 @@ export default function PhraseChallengePage() {
       const isCorrect = QUESTIONS[currentQuestion].correctAnswer === answer;
       const resultKey = isCorrect ? "correct" : "wrong";
 
+      setCurrentAnswer({
+        isCorrect,
+        answer,
+        currentAnswer: QUESTIONS[currentQuestion].correctAnswer,
+      });
+
       console.log({
         isCorrect,
         answer,
         correctAnswer: QUESTIONS[currentQuestion].correctAnswer,
       });
 
-      // TODO: implement page to show result
-      setResult((prev) => ({ ...prev, [resultKey]: prev[resultKey] + 1 }));
+      setTimeout(() => {
+        // TODO: implement page to show result
+        setResult((prev) => ({ ...prev, [resultKey]: prev[resultKey] + 1 }));
 
-      setCurrentQuestion((prev) => prev + 1);
-      setIsLoading(false);
+        setCurrentAnswer({ answer: "", currentAnswer: "", isCorrect: false });
+        setCurrentQuestion((prev) => prev + 1);
+        setIsLoading(false);
+      }, 10000);
     }, 500);
   };
 
@@ -54,6 +68,24 @@ export default function PhraseChallengePage() {
       setCurrentQuestion(0);
     }, 1000);
   }, []);
+
+  if (currentAnswer.answer) {
+    const textColor = currentAnswer.isCorrect
+      ? "text-green-500"
+      : "text-red-500";
+
+    return (
+      <div className="min-h-svh justify-center items-center flex flex-col gap-8">
+        <div className={`text-3xl text-gray-700 font-bold ${textColor}`}>
+          {currentAnswer.answer}
+        </div>
+
+        <div className="text-3xl text-gray-700 font-bold">
+          {currentAnswer.currentAnswer}
+        </div>
+      </div>
+    );
+  }
 
   if (!QUESTIONS[currentQuestion]) {
     return (

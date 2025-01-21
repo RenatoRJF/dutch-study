@@ -137,7 +137,7 @@ export const QUESTIONS = [
   },
   {
     question: "Minha casa tem uma garagem",
-    correctAnswer: "Mijn huis heeft uma garagem",
+    correctAnswer: "Mijn huis heeft een garage",
   },
   {
     question: "Minha casa tem uma cerca",
@@ -145,15 +145,15 @@ export const QUESTIONS = [
   },
   {
     question: "Minha casa tem um quintal",
-    correctAnswer: "Mijn huis heeft um achtertuin",
+    correctAnswer: "Mijn huis heeft een achtertuin",
   },
   {
     question: "Minha casa tem um jardim da frente",
-    correctAnswer: "Mijn huis heeft um voortuin",
+    correctAnswer: "Mijn huis heeft een voortuin",
   },
   {
     question: "Minha casa tem uma piscina",
-    correctAnswer: "Mijn huis heeft um zwembad",
+    correctAnswer: "Mijn huis heeft een zwembad",
   },
   {
     question: "Minha casa tem uma cozinha",
@@ -161,19 +161,19 @@ export const QUESTIONS = [
   },
   {
     question: "Minha casa tem um corredor",
-    correctAnswer: "Mijn huis heeft um gang",
+    correctAnswer: "Mijn huis heeft een gang",
   },
   {
     question: "Minha casa tem um sótão",
-    correctAnswer: "Mijn huis heeft um zolder",
+    correctAnswer: "Mijn huis heeft een zolder",
   },
   {
     question: "Minha casa tem um banheiro",
-    correctAnswer: "Mijn huis heeft um toilet",
+    correctAnswer: "Mijn huis heeft een toilet",
   },
   {
     question: "Minha casa tem uma porta marrom",
-    correctAnswer: "Mijn huis heeft um bruine deur",
+    correctAnswer: "Mijn huis heeft een bruine deur",
   },
   {
     question: "Minha casa é um apartamento",
@@ -181,7 +181,7 @@ export const QUESTIONS = [
   },
   {
     question: "Minha casa tem um elevador",
-    correctAnswer: "Mijn huis heeft um lift",
+    correctAnswer: "Mijn huis heeft een lift",
   },
   {
     question: "Minha casa é um prédio",
@@ -189,11 +189,11 @@ export const QUESTIONS = [
   },
   {
     question: "Minha casa tem um corredor longo",
-    correctAnswer: "Mijn huis heeft um lange gang",
+    correctAnswer: "Mijn huis heeft een lange gang",
   },
   {
     question: "Minha casa tem uma parede curta",
-    correctAnswer: "Mijn huis heeft um korte muur",
+    correctAnswer: "Mijn huis heeft een korte muur",
   },
   {
     question: "A casa não é minha",
@@ -226,4 +226,5 @@ export const QUESTIONS = [
   {
     question: "Meu vizinho tem uma bela casa",
     correctAnswer: "Mijn buur heef een mooie huis",
-  },];
+  },
+];
