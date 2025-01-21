@@ -69,7 +69,7 @@ export default function PhraseChallengePage() {
     }, 1000);
   }, []);
 
-  if (currentAnswer.answer) {
+  if (currentAnswer.currentAnswer) {
     const textColor = currentAnswer.isCorrect
       ? "text-green-500"
       : "text-red-500";
