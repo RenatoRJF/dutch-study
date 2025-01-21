@@ -42,14 +42,11 @@ export default function PhraseChallengePage() {
         correctAnswer: QUESTIONS[currentQuestion].correctAnswer,
       });
 
-      setTimeout(() => {
-        // TODO: implement page to show result
-        setResult((prev) => ({ ...prev, [resultKey]: prev[resultKey] + 1 }));
+      // TODO: implement page to show result
+      setResult((prev) => ({ ...prev, [resultKey]: prev[resultKey] + 1 }));
 
-        setCurrentAnswer({ answer: "", currentAnswer: "", isCorrect: false });
-        setCurrentQuestion((prev) => prev + 1);
-        setIsLoading(false);
-      }, 10000);
+      setCurrentQuestion((prev) => prev + 1);
+      setIsLoading(false);
     }, 500);
   };
 
@@ -83,6 +80,19 @@ export default function PhraseChallengePage() {
         <div className="text-3xl text-gray-700 font-bold">
           {currentAnswer.currentAnswer}
         </div>
+
+        <button
+          className="block text-white bg-blue-600 p-4 rounded-sm hover:opacity-90"
+          onClick={() => {
+            setCurrentAnswer({
+              answer: "",
+              currentAnswer: "",
+              isCorrect: false,
+            });
+          }}
+        >
+          Continue
+        </button>
       </div>
     );
   }
