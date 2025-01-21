@@ -5,5 +5,6 @@ interface PhraseFormData {
 
 export interface PhraseFormProps {
   question: string;
+  isLoading: boolean;
   onSubmit: (data: PhraseFormData) => void;
 }

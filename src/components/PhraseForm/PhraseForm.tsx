@@ -2,13 +2,17 @@ import { useForm } from "react-hook-form";
 
 import { PhraseFormProps } from "./PhraseForm.types";
 
-export default function PhraseForm({ question, onSubmit }: PhraseFormProps) {
+export default function PhraseForm({
+  question,
+  isLoading,
+  onSubmit,
+}: PhraseFormProps) {
   const form = useForm({ defaultValues: { question, answer: "" } });
 
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}
-      className="space-y-4 bg-white p-8 rounded-lg w-full max-w-[600px]"
+      className="space-y-4 bg-white p-8 rounded-lg w-full max-w-[600px] shadow-md"
     >
       <h1 className="font-extrabold text-3xl text-gray-700 mb-4">{question}</h1>
 
@@ -22,9 +26,10 @@ export default function PhraseForm({ question, onSubmit }: PhraseFormProps) {
       <div className="flex justify-end">
         <button
           type="submit"
+          disabled={isLoading}
           className="block text-white bg-blue-600 p-4 rounded-sm hover:opacity-90"
         >
-          Submit answer
+          {isLoading ? "Loading..." : "Submit answer"}
         </button>
       </div>
     </form>
