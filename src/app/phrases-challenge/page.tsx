@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useEffect, useRef, useState } from "react";
 
 import { QUESTIONS } from "@/constants/questions";
+import normalizeText from "@/utils/normalize-text";
 
 import Counter from "@/components/Counter/Counter";
 import PhraseForm from "@/components/PhraseForm/PhraseForm";
@@ -27,7 +28,10 @@ export default function PhraseChallengePage() {
     setIsLoading(true);
 
     setTimeout(() => {
-      const isCorrect = QUESTIONS[currentQuestion].correctAnswer === answer;
+      const isCorrect =
+        normalizeText(QUESTIONS[currentQuestion].correctAnswer) ===
+        normalizeText(answer);
+
       const resultKey = isCorrect ? "correct" : "wrong";
 
       setCurrentAnswer({
